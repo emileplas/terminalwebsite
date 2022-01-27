@@ -3,26 +3,45 @@
 /* ----------------DARK MODE ------------- */
 
 body {
+    cursor: '█';
     padding: 25px;
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
     font-size: 25px;
+    font-family: "Fira Mono", monospace;
   }
   
   .dark-mode {
-    background-color: black;
-    color: white;
+ 
+    background-color: white;
+    color: black;
+
+
 }
 
 input {
+    color: white;
     background-color: transparent;
     /* color: transparent; */
     border: none;
     box-shadow: none;
-    /* caret-shape: block;
-    caret-color: black; */
+    caret-color: greenyellow;
+    
 
     
 }
+
+.user{
+  color: greenyellow;
+}
+
+.location{
+  color: lightblue
+}
+
+
+
+
+
 
 input:focus {outline:none!important;}

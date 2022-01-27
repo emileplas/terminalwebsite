@@ -15,8 +15,9 @@
     <form name="inputForm" onsubmit="return false">
         <!--@TODO: carret is dependend on size of input field. Input field needs to become bigger depending on typing-->
         <!--TODO: make carret blink-->
-        <label>visitor@Line-By-Line: ~ % </label>
-        <input type="text" name="input" id="input"></input>
+        <label class="user" for="input">visitor@Line-By-Line: </label>
+        <label class="location" for="input">~ %</label>
+        <input type="text" name="input" id="input" autofocus></input>
         <input type="submit" hidden />
     </form>
 </body>
@@ -33,9 +34,9 @@
     });
 
     </script>
- <script type="text/javascript" src="./js/caret.js"></script>
+ <!-- <script type="text/javascript" src="./js/caret.js"></script> -->
 <script>
-    CaretJS.create('input');
+    // CaretJS.create('input');
     // CaretJS.create('caret2'); -->
 </script>
 </html>
