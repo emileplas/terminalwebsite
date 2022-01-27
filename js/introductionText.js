@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded',function(event){
             if (i < introMessages.length) {           
                 introLoop();            
             }                     
-        }, 3000)
+        }, 1500)
     }
 
     introLoop();
