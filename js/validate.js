@@ -52,23 +52,24 @@ function validate(){
                 document.getElementById('about').appendAfter(document.getElementById(latestDiv));
                 document.getElementById('about').style.display = 'block';
                 document.getElementById('input-form').value = '';
-                console.log("and here");
                 break;
             }
  
         case 'projects':
             if(divArray.length === 0){
-                
-               
                 document.getElementById('projects').style.display = 'block';
                 document.getElementById('input-form').value = '';
                 divArray.push('projects')
                 console.log("This is the divArray: " + divArray)
                 break;
-            }
-            else{
-                document.getElementById('projects').appendAfter(document.getElementById(latestDiv))
-                console.log("we were here");
+            }else if(divArray.length > 0 && divArray.includes('projects')){
+                var copy = document.getElementById('projects').cloneNode(true)
+                copy.appendAfter(document.getElementById(latestDiv));
+                console.log("we are in the cloning zone. This is the divArray" + divArray)
+            }else{
+                document.getElementById('projects').appendAfter(document.getElementById(latestDiv));
+                document.getElementById('projects').style.display = 'block';
+                document.getElementById('input-form').value = '';
                 break
             }
 
