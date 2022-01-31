@@ -1,4 +1,27 @@
+/*color scheme: https://docs.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes*/
 
+
+
+/* ----------------GENERAL ------------- */
+
+em{
+  font-style: normal;
+  /* color: #C19C00 */
+  color: #3A96DD; /*cyan*/
+}
+
+.command-instructions{
+  color: #B4009E;
+}
+
+.user{
+  color: #16C60C; /*bright green*/
+}
+
+.location{
+  color: #3B78FF;
+  /* color: lightblue */
+}
 
 /* ----------------DARK MODE ------------- */
 
@@ -8,12 +31,14 @@ body {
     cursor: '█';
     padding: 25px;
     background-color: black;
-    color: white;
+    color: #CCCCCC;
     font-size: 25px;
     font-family: "Fira Mono", monospace;
-  }
+}
+
+
   
-  .dark-mode {
+.dark-mode {
  
     background-color: white;
     color: black;
@@ -24,7 +49,7 @@ body {
 /* ----------------HEADER ------------- */
 
 pre{
-  color: yellowgreen
+  color: #16C60C; /*bright green*/
 }
 
 
@@ -37,33 +62,25 @@ input {
     /* color: transparent; */
     border: none;
     box-shadow: none;
-    caret-color: greenyellow;
+    caret-color: #16C60C; /*bright green*/
     
 }
 
 
-.user{
-  color: greenyellow;
-}
 
-.location{
-  color: lightblue
-}
 
 input:focus {outline:none!important;}
 
+/* ----------------ABOUT ------------- */
 
-/* ----------------typewriter effect ------------- */
-
-/* span {
-  border-right: .05em solid;
-  animation: caret 1s steps(1) infinite;
+.about{
+  display: none;
 }
 
-@keyframes caret {
-  50% {
-    border-color: transparent;
-  }
-} */
 
 
+/* ----------------PROJECTS ------------- */
+
+.projects{
+  display: none;
+}

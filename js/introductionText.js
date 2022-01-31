@@ -6,12 +6,15 @@ document.addEventListener('DOMContentLoaded',function(event){
 
     function insertIntroCommand(message,key){
         return new Promise((resolve, reject) => {
+        var userClass = 'user'
+        var locationClass = 'location'
+
+
         document.getElementById("introMessage").innerHTML += `<p id='messageID${key}'><span class=${userClass}>administrator@Line-By-Line: </span><span class=${locationClass}>~ %</span><span class="message" id="messageSpan${key}"> </span></p>`
         var i = 0;
         var txt = message; /* The text */
         var speed = 50; /* The speed/duration of the effect in milliseconds */      
-        var userClass = 'user'
-        var locationClass = 'location'
+
         var id = `messageSpan${key}`;
 
         function typeWriter() {

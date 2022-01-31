@@ -28,12 +28,47 @@
                     |___/                                                                  
         </pre>
 
-        <div id="introMessage"></div>
         
-        <p><span class="user">administrator@Line-By-Line: </span><span class="location">~ % </span><span class="message" id="firstmessage">I am a developer</span></p>
+        
+        <!-- <p><span class="user">administrator@Line-By-Line: </span><span class="location">~ % </span><span class="message" id="firstmessage">I am a developer</span></p> -->
     </header>
+    <main>
+        <!--where the typed intro messages will be inserted-->
+        <div id="introMessage"></div>
 
-    <form name="inputForm" onsubmit="return false">
+        <!--about-->
+        <div id="about" class="about">
+            <p><span class="user">visitor@Line-By-Line: </span><span class="location">About %</span></p>
+            <p class="printed-section">About me:</p>
+            <p class="printed-section">I am a <em>full stack developer</em> based in Belgium and Brazil. From a young age I have always been interested in creating with computers. I started building websites and forums at the age of 14 using HTML and CSS. After high school I took a small non-technological detour. I graduated from law school and was active as a real estate and environemntal lawyer for 4 years working with various clients.</p>
+            <p class="printed-section">Missing the creative process, I decided to recenter my attention back on developping. While being a lawyer I took several courses (python, java and android development) and played around with my raspberry pi. Leaving the bar association in the summer of 2021, I enrolled in the <em>Codecademy full stack developer course</em>. In february 2022 I enrolled myself for <em>part-time bachelor of computer science.</em></p>
+            <p class="printed-section">Currently I am working on various projects. Type <span class="command-instructions">projects</span> to discover what I have been up to lately.</p>
+
+        </div>
+        <div id="projects" class="projects ">
+            <p><span class="user">visitor@Line-By-Line: </span><span class="location">Projects % </span></p>
+            <p class="printed-section">Recent projects:</p>
+            <p>[1] My Legal Database - Ongoing</p>
+            <p>With the My Legal Database I want to create a publicly accessible database, that bundels case law from different public databases, in one centralized, user friendly database.</p>
+            <p>Technologies used: React-Redux, HTML, CSS, Elasticsearch, Node.js.</p>
+            <p>[2] Website pH Controle de Qualidade</p>
+            <p>pH Controle de Qualidade is a Brazilian based consultancy firm. The goal of this project was to develop a minimalistic yet visually attractive website.</p>
+            <p>Technologies used: Javascript, HTML, CSS, Bootstrap.</p>
+            <p>[3] Appartamento Salvador</p>
+            <p>This website was created in order to promote an appartement for sale in Salvador. The website uses a video header for the desktop version.</p>
+            <p>Techologies used: HTML, CSS.</p>
+
+        </div>
+
+
+
+    </main>
+
+
+
+
+
+    <form id="input-form" name="inputForm" onsubmit="return false">
         <!--@TODO: carret is dependend on size of input field. Input field needs to become bigger depending on typing-->
         <!--TODO: make carret blink-->
         <label class="user" for="input">visitor@Line-By-Line: </label>
