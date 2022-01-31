@@ -19,27 +19,53 @@ divArray = [];
 //function that takes care of displaying and/or inserting new divs
 function insertElement(elementName){
     var latestDiv = divArray[divArray.length -1]
+
     if(divArray.length === 0){
-        // document.getElementById('input-form').prepend(document.getElementById('about'));
-        document.getElementById(elementName).style.display = 'block';
+        //    function inserts first element
+        document.getElementById(elementName + 1).style.display = 'block';
         document.getElementById('input-form').value = '';
-        divArray.push(elementName)
-        console.log("We were in the first posstion")
-        console.log("This is the divArray: " + divArray)
+        divArray.push(elementName + 1)
+
+        console.log("These are the divs present at the page " + divArray)
         
     }
-    else if(divArray.length > 0 && divArray.includes(elementName)){
-        var copy = document.getElementById(elementName).cloneNode(true)
+    else if(divArray.length > 0 && divArray.includes(elementName + 1)){
+        // function takes care of multiple requests for same div (e.g. about - about - about - projects - about), each time sorting after the latest div.
+        var allElements = []
+        
+        for(i=0; i<divArray.length; i++){
+            if(divArray[i].includes(elementName))
+            allElements.push(divArray[i])
+        }
+        var lastDiv = allElements[allElements.length -1];
+
+        //first a new id number is defined
+        var existingId = document.getElementById(lastDiv).id;
+    
+        var existingIDNumber = parseInt(existingId.match(/\d/g));
+
+        var newIdNumber = existingIDNumber+1;
+
+        
+        //second: the id is changed
+        var copy = document.getElementById(elementName + 1).cloneNode(true)
+        copy.id = elementName + newIdNumber;
+
+        //third: the element is inserted
         copy.appendAfter(document.getElementById(latestDiv));
         document.getElementById('input-form').value = '';
-        console.log("We were in the second possition")
-        divArray.push(elementName)
+        divArray.push(copy.id)
+        console.log("These are the divs present at the page " + divArray)
         
     }else{
-        document.getElementById(elementName).appendAfter(document.getElementById(latestDiv));
-        document.getElementById(elementName).style.display = 'block';
+        // function inserts object for first time if there is already an object printed
+        document.getElementById(elementName+1).appendAfter(document.getElementById(latestDiv));
+        document.getElementById(elementName+1).style.display = 'block';
+        divArray.push(elementName+1)
         document.getElementById('input-form').value = '';
-        console.log("We were in the third possition")
+
+        console.log("These are the divs present at the page " + divArray)
+     
         
     }
 }
@@ -51,20 +77,7 @@ function validate(){
     switch (x) {
         case 'dark':
             darkMode();
-            return false;
-            // $(document).ready(function(){
-            //     $.getscript("js/darkMode.js",function(){
-            //         darkMode();
-            //         });
-            //     // $('#input').change(function(){
-            //     //     alert("alert here");
-            //     // });
-            // });
-
           
-
-            console.log("we received dark")
-            console.log("this is x " + x)
             break;
         case 'light':
             darkMode();
@@ -72,48 +85,13 @@ function validate(){
         case 'about':
             insertElement('about');
             break;
-            // if(divArray.length === 0){
-            //     // document.getElementById('input-form').prepend(document.getElementById('about'));
-            //     document.getElementById('about').style.display = 'block';
-            //     document.getElementById('input-form').value = '';
-            //     divArray.push('about')
-            //     console.log("This is the divArray: " + divArray)
-            //     break;
-            // }
-            // else if(divArray.length > 0 && divArray.includes('about')){
-            //     var copy = document.getElementById('about').cloneNode(true)
-            //     copy.appendAfter(document.getElementById(latestDiv));
-            //     document.getElementById('input-form').value = '';
-            //     divArray.push('about')
-            //     break;
-            // }else{
-            //     document.getElementById('about').appendAfter(document.getElementById(latestDiv));
-            //     document.getElementById('about').style.display = 'block';
-            //     document.getElementById('input-form').value = '';
-            //     break;
-            // }
+
+
  
         case 'projects':
             insertElement('projects')
             break;
-            // if(divArray.length === 0){
-            //     document.getElementById('projects').style.display = 'block';
-            //     document.getElementById('input-form').value = '';
-            //     divArray.push('projects')
-            //     console.log("This is the divArray: " + divArray)
-            //     break;
-            // }else if(divArray.length > 0 && divArray.includes('projects')){
-            //     var copy = document.getElementById('projects').cloneNode(true)
-            //     copy.appendAfter(document.getElementById(latestDiv));
-            //     document.getElementById('input-form').value = '';
-            //     divArray.push('projects')
-            //     break;
-            // }else{
-            //     document.getElementById('projects').appendAfter(document.getElementById(latestDiv));
-            //     document.getElementById('projects').style.display = 'block';
-            //     document.getElementById('input-form').value = '';
-            //     break
-            // }
+
 
 
 
