@@ -94,6 +94,11 @@ document.addEventListener('DOMContentLoaded',function(event){
         else{
             console.log('finished all sentences')
             document.getElementById("input-form").style.display = 'block'
+            function setFocusToTextBox(){
+                document.getElementById("input").focus();
+                console.log("focus function called")
+            }
+            setFocusToTextBox()
         }
     }
 

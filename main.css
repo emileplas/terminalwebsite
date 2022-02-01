@@ -61,12 +61,11 @@ pre{
 }
 
 input {
-    color: white;
+    color: #CCCCCC;
     background-color: transparent;
-    /* color: transparent; */
     border: none;
     box-shadow: none;
-    caret-color: #16C60C; /*bright green*/
+    caret-color: #16C60C;
     
 }
 
