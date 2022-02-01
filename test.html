@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span></p>
+    
+    <div id="name">
+        <p>Please provide your name:</p>
+        <form id="name-form" name="name-form" onsubmit="return false">
+            <!--@TODO: carret is dependend on size of input field. Input field needs to become bigger depending on typing-->
+            <!--TODO: make carret blink-->
+            <label class="user" for="name">visitor@Line-By-Line: </label>
+            <label class="location" for="name">~ %</label>
+            <input type="text" name="name" id="name" autofocus></input>
+            <input type="submit" hidden />
+        </form>
+    </div>
+
+    <!--if name entered-->
+    <p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span></p>
+    <p>Name: **Name entered**</p>
+    <div id="email">
+    <p>Please provide your e-mail address:</p>
+    <form id="email-form" name="email-form" onsubmit="return false">
+        <!--@TODO: carret is dependend on size of input field. Input field needs to become bigger depending on typing-->
+        <!--TODO: make carret blink-->
+        <label class="user" for="name">visitor@Line-By-Line: </label>
+        <label class="location" for="name">~ %</label>
+        <input type="text" name="name" id="name" autofocus></input>
+        <input type="submit" hidden />
+    </form>
+    </div>
+
+    <!--if email entered-->
+    <p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span></p>
+    <p>Name: **Name entered**</p>
+    <p>Email: **email entered**</p>
+    <div id="message">
+    <p>Please provide your message:</p>
+    <form id="message-form" name="messageform" onsubmit="return false">
+        <!--@TODO: carret is dependend on size of input field. Input field needs to become bigger depending on typing-->
+        <!--TODO: make carret blink-->
+        <label class="user" for="name">visitor@Line-By-Line: </label>
+        <label class="location" for="name">~ %</label>
+        <input type="text" name="name" id="name" autofocus></input>
+        <input type="submit" hidden />
+    </form>
+    </div>
+
+    <!--if message entered-->
+    <p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span></p>
+    <p>Thank you, the following message was sent:</p>
+    <p>Name: **Name entered**</p>
+    <p>Email: **email entered**</p>
+    <p>Message: **message**</p>
+    <p>I will contact you soon!</p>
+    
+    
+
+    
+</body>
+</html>

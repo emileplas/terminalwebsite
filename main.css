@@ -54,7 +54,7 @@ em{
 
 
 body {
-    cursor: '█';
+   
     padding: 25px;
     background-color: black;
     color: #CCCCCC;
@@ -153,5 +153,10 @@ input:focus {outline:none!important;}
 }
 
 .darkmode{
+  display: none;
+}
+
+/* ----------------CONTACT ------------- */
+.contact{
   display: none;
 }
