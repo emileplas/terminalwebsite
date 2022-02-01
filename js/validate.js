@@ -112,6 +112,7 @@ function validate(){
 
 
         default:
+            insertElement('error')
             break;
     }
 }
