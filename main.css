@@ -145,3 +145,13 @@ input:focus {outline:none!important;}
   color: #C50F1F;
   list-style-type: '*'
 }
+
+/* ----------------LIGHT AND DARK INSTRUCTION MESSAGES ------------- */
+
+.lightmode{
+  display: none;
+}
+
+.darkmode{
+  display: none;
+}

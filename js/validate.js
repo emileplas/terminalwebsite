@@ -33,8 +33,8 @@ function insertElement(elementName){
         divArray.push(elementName + 1)
         console.log("These are the divs present at the page " + divArray)
 
-        //input field is cleared
-        
+        // //input field is cleared
+        // clearInput()
     }
     else if(divArray.length > 0 && divArray.includes(elementName + 1)){
         // function takes care of multiple requests for same div (e.g. about - about - about - projects - about), each time sorting after the latest div.
@@ -66,8 +66,8 @@ function insertElement(elementName){
         divArray.push(copy.id)
         console.log("These are the divs present at the page " + divArray)
 
-        //the input field is cleared:
-        clearInput();
+        // //the input field is cleared:
+        // clearInput();
         
     }else{
         // function inserts object for first time if there is already an object printed
@@ -76,11 +76,12 @@ function insertElement(elementName){
 
         //divarray is updated
         divArray.push(elementName+1)
-
-        //input field is cleared
-        clearInput();
-
         console.log("These are the divs present at the page " + divArray)
+
+        // //input field is cleared
+        // clearInput();
+
+
      
         
     }
@@ -93,26 +94,30 @@ function validate(){
     switch (x) {
         case 'dark':
             darkMode();
-          
+            insertElement('darkmode')
+            clearInput(); // in order to clear input field after command is submitted
             break;
+
         case 'light':
             darkMode();
+            insertElement('lightmode')
+            clearInput(); // in order to clear input field after command is submitted
             break;
+
         case 'about':
             insertElement('about');
+            clearInput(); // in order to clear input field after command is submitted
             break;
 
-
- 
         case 'projects':
-            insertElement('projects')
+            insertElement('projects');
+            clearInput(); // in order to clear input field after command is submitted
             break;
-
-
 
 
         default:
-            insertElement('error')
+            insertElement('error');
+            clearInput(); // in order to clear input field after command is submitted
             break;
     }
 }
