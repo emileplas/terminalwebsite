@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded',function(event){
 
-    var introMessages = ["I am a full stack developer.", "You are currently on the command version of my website", `Please type one of the following commands to get to know me: \n\n  about <br/> * projects. \n To contact me, insert contact in the command line.`, "another message"];
+    var introMessages = ["I am a full stack developer.", "You are currently on the command version of my website", `Please type one of the following commands to get to know me: **about *projects. **To contact me, insert contact in the command line.`, "another message"];
     var y=0;
 
 
@@ -18,9 +18,16 @@ document.addEventListener('DOMContentLoaded',function(event){
         var id = `messageSpan${key}`;
 
         function insertLetter(i){
-            return new Promise((resolve, reject) => { 
-                document.getElementById(id).innerHTML += txt.charAt(i);
-                resolve(i);
+            return new Promise((resolve, reject) => {
+                if(txt.charAt(i)==='*'){
+                    document.getElementById(id).innerHTML += `<br/>`;
+                    console.log("we were at the line break section")
+                    resolve(i)
+                }else{
+                    document.getElementById(id).innerHTML += txt.charAt(i);
+                    resolve(i);
+                } 
+
             })
         }
 
