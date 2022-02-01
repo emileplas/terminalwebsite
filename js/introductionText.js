@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded',function(event){
 
-    var introMessages = ["I am a developer.", "This website is my portfolio website.", "blabla.", "another message"];
+    var introMessages = ["I am a full stack developer.", "You are currently on the command version of my website", `Please type one of the following commands to get to know me: \n\n  about <br/> * projects. \n To contact me, insert contact in the command line.`, "another message"];
     var y=0;
 
 
@@ -17,22 +17,47 @@ document.addEventListener('DOMContentLoaded',function(event){
 
         var id = `messageSpan${key}`;
 
-        function typeWriter() {
+        function insertLetter(i){
+            return new Promise((resolve, reject) => { 
+                document.getElementById(id).innerHTML += txt.charAt(i);
+                resolve(i);
+            })
+        }
+
+        function typeWriter(i) {
 
             if (i < txt.length) {
-                document.getElementById(id).innerHTML += txt.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
+                insertLetter(i)
+
+                .then(function(response){
+                    return new Promise((resolve, reject) => { 
+                        // console.log("first response " + response); 
+                        var increasedNumber = response + 1
+                        resolve(increasedNumber)
+                        
+                    })
+                })
+                .then(async function(response){
+                    // console.log("Second respone " + response)
+                    var newNumber = await response
+
+                    setTimeout(function(){
+                        typeWriter(newNumber)
+                    }
+                    , speed)
+                })
+
+                
             }
             else{
                 
-                resolve();
+                resolve(key);
             }
        
            
         }
 
-        typeWriter()
+        typeWriter(i)
         
       
     })
@@ -40,11 +65,24 @@ document.addEventListener('DOMContentLoaded',function(event){
 
     var timeBetweenIndividualMessages = 2000;
         
-    function insertAllMessages(){
+    function insertAllMessages(y){
+        var y = y;
         if(y<introMessages.length){
             insertIntroCommand(introMessages[y],y)
-            .then(response => y++)
-            setTimeout(insertAllMessages, timeBetweenIndividualMessages);
+            .then(function(response){
+                return new Promise((resolve, reject) => {
+                    // console.log("We received a response " + response)
+                    var newSentence = response + 1
+                        resolve(newSentence)
+                    })
+                
+
+            })
+            .then(function(response){
+                // console.log("we also received the response here " + response)
+                insertAllMessages(response)
+            })
+
         }
         else{
             console.log('finished all sentences')
@@ -52,6 +90,6 @@ document.addEventListener('DOMContentLoaded',function(event){
         }
     }
 
-    insertAllMessages()
+    insertAllMessages(y)
    
 })
