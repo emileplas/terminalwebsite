@@ -1,10 +1,15 @@
-
+//function to switch between dark and light mode
 function darkMode() {
     var element = document.body;
     element.classList.toggle("dark-mode");
- }
+}
 
- //functions to guarantee that element is inserted before or after
+//function to clear the input field after the command is submitted
+function clearInput(){
+    document.getElementById('input-form').reset();
+}
+
+//functions to guarantee that element is inserted before or after
 Element.prototype.appendBefore = function (element) {
     element.parentNode.insertBefore(this, element);
   },false;
@@ -23,10 +28,12 @@ function insertElement(elementName){
     if(divArray.length === 0){
         //    function inserts first element
         document.getElementById(elementName + 1).style.display = 'block';
-        document.getElementById('input-form').value = '';
+        
+        //divarray is updated
         divArray.push(elementName + 1)
-
         console.log("These are the divs present at the page " + divArray)
+
+        //input field is cleared
         
     }
     else if(divArray.length > 0 && divArray.includes(elementName + 1)){
@@ -53,16 +60,25 @@ function insertElement(elementName){
 
         //third: the element is inserted
         copy.appendAfter(document.getElementById(latestDiv));
-        document.getElementById('input-form').value = '';
+        
+
+        //fourth: divarray is updated
         divArray.push(copy.id)
         console.log("These are the divs present at the page " + divArray)
+
+        //the input field is cleared:
+        clearInput();
         
     }else{
         // function inserts object for first time if there is already an object printed
         document.getElementById(elementName+1).appendAfter(document.getElementById(latestDiv));
         document.getElementById(elementName+1).style.display = 'block';
+
+        //divarray is updated
         divArray.push(elementName+1)
-        document.getElementById('input-form').value = '';
+
+        //input field is cleared
+        clearInput();
 
         console.log("These are the divs present at the page " + divArray)
      
