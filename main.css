@@ -64,17 +64,29 @@ body {
 
 
   
-.dark-mode {
+.light-mode {
  
-    background-color: white;
-    color: black;
+    background-color: white !important;
+    color: black !important;
 
 
 }
 
+.user-light-mode{
+    color: #13A10E !important;
+}
+
+.header-light-mode{
+  color: #13A10E !important;
+}
+
+#header-light{
+  display: none;
+}
+
 /* ----------------HEADER ------------- */
 
-pre{
+.header-dark-mode{
   color: #16C60C; /*bright green*/
 }
 
