@@ -160,3 +160,7 @@ input:focus {outline:none!important;}
 .contact{
   display: none;
 }
+
+.contact-error{
+  color: #C50F1F;
+}

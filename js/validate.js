@@ -281,7 +281,7 @@ function messageInserted(messageInserted){
             </div>`
     
     
-            resolve(reviewAnswer)
+            
             
         })
     
@@ -304,7 +304,7 @@ function reviewInserted(reviewAnswerInserted){
         //     return existingIDNumber
         // }
 
-        var reviewCleaned = reviewAnswer.replace(/\s/g, '');
+        var reviewCleaned = (reviewAnswer.replace(/\s/g, '')).toLowerCase();
         
         function defineLatestContactDiv(){                     
             return new Promise((resolve, reject)=>{
@@ -329,14 +329,18 @@ function reviewInserted(reviewAnswerInserted){
             }) 
         }
 
-        // var existingIDNumber = defineLatestContactDiv()
-        // console.log(existingIDNumber);
+        var existingIDNumber = defineLatestContactDiv()
+       
 
 
         defineLatestContactDiv()
         .then(function(response){  
-            if(reviewCleaned === 'YES' || 'yes'){
-                var idNumber = response;
+            var idNumber = response;
+
+            if(reviewCleaned === 'yes'){
+                console.log("this should be reviewCleanded " + reviewCleaned)
+                console.log(typeof reviewCleaned);
+               
                 console.log("this should be the id number" + idNumber)
                 var formData = new FormData();
                 formData.append('name', name);
@@ -353,7 +357,7 @@ function reviewInserted(reviewAnswerInserted){
                     console.log('form submitted succesfully');
                     console.log(response)
                     document.getElementById('contact' + idNumber).innerHTML = 
-                    `<p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span><span class="message">You message was send succesfully. I will contact you soon.</span></p>`;
+                    `<p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span><span class="message">Your message was send succesfully. I will contact you soon.</span></p>`;
                     document.getElementById('input-form').style.display = 'block';
 
                     /* When submit successfully completed, hide form */
@@ -370,15 +374,33 @@ function reviewInserted(reviewAnswerInserted){
                     `<p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span><span class="error">Something went wrong. Please try again later.</span></p>`;
                     document.getElementById('input-form').style.display = 'block';
                 });
-            }else if(reviewCleaned === 'NO' || 'no'){
+            }else if(reviewCleaned ===  'no'){
                 document.getElementById('contact' + idNumber).innerHTML = 
                 `<p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span><span class="message">You decided to not send the message. If you want to send a message later on, you can type contact in the command line to send a new message.</span></p>`;
                 document.getElementById('input-form').style.display = 'block';
             }
             else{
-                document.getElementById('contact' + idNumber).innerHTML = 
-                `<p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span><span class="error">This command is not recognized. Please type YES or NO to submit the form. To leave the form, without submitting the message, type NO</span></p>`;
-                messageInserted(getMessage())
+                console.log("we were in the last section")
+                var message = getMessage();
+                // document.getElementById('contact' + idNumber).innerHTML = 
+                // `<p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span><span class="contact-error"> This command is not recognized. Please type YES or NO to submit the form. To leave the form, without submitting the message, type NO. Redirecting to submit question in </span><span class="" id="redirect-count-down"></span></p>`;
+                
+
+                var timeleft = 10;
+                var redirectTimer = setInterval(function(){
+                    if(timeleft <= 0){
+                        clearInterval(redirectTimer);
+                        // document.getElementById("redirect-count-down").innerHTML = "Finished";
+                        messageInserted(message);
+                    } else {
+                        document.getElementById('contact' + idNumber).innerHTML = 
+                        `<p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span><span class="contact-error"> This command is not recognized. Please type YES or NO to submit the form. To leave the form, without submitting the message, type NO. Redirecting to submit question in ${timeleft} seconds</span></p>`;
+
+
+                        // document.getElementById("redirect-count-down").innerHTML = timeleft + " seconds";
+                     }
+                timeleft -= 1;
+                }, 1000);
             }
 
 
