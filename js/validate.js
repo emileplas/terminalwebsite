@@ -2,6 +2,7 @@
 function darkMode() {
     var element = document.body;
     element.classList.toggle("dark-mode");
+    
 }
 
 //function to clear the input field after the command is submitted

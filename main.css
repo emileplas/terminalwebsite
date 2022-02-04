@@ -51,7 +51,10 @@ em{
 
 /* ----------------DARK MODE ------------- */
 
-
+html,body{
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 body {
    
@@ -86,9 +89,35 @@ body {
 
 /* ----------------HEADER ------------- */
 
+
+
 .header-dark-mode{
   color: #16C60C; /*bright green*/
 }
+
+pre{
+  max-width: 100%;
+  /* font-size: calc(10px + 10 * ((100vw - 200px) / 800)); */
+  font-size: 1.75vw;
+
+}
+
+.header-light-mode pre{
+  max-width: 100%;
+  font-size: 1.25vw;
+}
+
+/* ----------------navbar ------------- */
+
+.navbar-dark-mode{
+  color: #16C60C;
+}
+
+.navbar-light-mode{
+  display: none;
+  color: #13A10E !important;
+}
+
 
 
 

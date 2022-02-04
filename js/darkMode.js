@@ -4,6 +4,8 @@ function darkMode() {
     var user = document.getElementsByClassName('user')
     var headerDark = document.getElementById('header-dark');
     var headerLight = document.getElementById('header-light');
+    var navbarDark = document.getElementById('navbar-dark-mode');
+    var navbarLight = document.getElementById('navbar-light-mode')
 
     body.classList.toggle("light-mode");
     input.classList.toggle("light-mode");
@@ -28,7 +30,21 @@ function darkMode() {
         headerDark.style.display = 'none';
     }
 
+    if(navbarDark.style.display === 'none'){
+        navbarDark.style.display = 'block';
+        navbarLight.style.display = 'none';
+    }else{
+        navbarDark.style.display = 'none';
+        navbarLight.style.display = 'block'
+    }
 
+    function getYear(){
+        var year = new Date().getFullYear();
+        document.getElementById('year-light').innerHTML = `${year}`;
+        
+    }
+
+    getYear();
     
     console.log(user);
     
