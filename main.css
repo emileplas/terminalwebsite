@@ -137,18 +137,25 @@ pre{
 
 /* ----------------navbar ------------- */
 
+nav{
+  width: 100%;
+}
+
 .navbar-dark-mode{
   color: #16C60C;
+  background-color: black;
 }
 
 .navbar-light-mode{
-  display: none;
+  
   color: #13A10E !important;
+  background-color: white;
 }
 
 .stick-to-top{
   position: fixed;
   top: 0;
+  opacity: 1;
 }
 
 

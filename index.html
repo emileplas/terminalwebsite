@@ -29,7 +29,7 @@
 
         </pre>
     </header>
-    <nav class="navbar-dark-mode" id="navbar-dark-mode">© Emile Plas - <span id="year"></span></nav>
+    <!-- <nav class="navbar-dark-mode" id="navbar-dark-mode">© Emile Plas - <span id="year"></span></nav> -->
     <header id="header-light" class="header-light-mode">
         <pre>
 ██   ██ ███████ ██      ██       ██████                                                                               
@@ -47,7 +47,7 @@
 
         </pre>
     </header>
-    <nav class="navbar-light-mode" id="navbar-light-mode">© Emile Plas - <span id="year-light"></span></nav>
+    <nav class="navbar-dark-mode" id="navbar">© Emile Plas - <span id="year"></span></nav>
     <main>
         <!--where the typed intro messages will be inserted-->
         <div id="introMessage"></div>
@@ -150,13 +150,26 @@
 <script type='text/javascript' src="js/introductionText.js"></script>
 
 <!--script to make navbar stick-->
-<script>
-    var navbar = document.getElementsByTagName('nav')[0];
+<script type='text/javascript'>
+    var navbar = document.getElementById('navbar');
     var origOffsetY = navbar.offsetTop;
     
+
     function onScroll(e){
-        window.scrollY >= origOffsetY ? navbar.classList.add('stick-to-top') : navbar.classList.remove('.stick-to-top');
+        //if(navbarDark){
+            
+            window.scrollY >= origOffsetY ? navbar.classList.add('stick-to-top') : navbar.classList.remove('stick-to-top');
+        //}
+
+
+        //if(navbarLight){
+            // var origOffsetYlight = navbarLight.offsetTop;
+            // window.scrollY >= origOffsetYlight ? navbarLight.classList.add('stick-to-top') : navbarLight.classList.remove('stick-to-top');
+        //}
+        
     }
+
+
 
     document.addEventListener('scroll', onScroll);
 </script>
