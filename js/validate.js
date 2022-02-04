@@ -416,7 +416,7 @@ function reviewInserted(reviewAnswerInserted){
                     
 
                     // to ensure that contact section is fully visible
-                    // document.getElementById('contact' + response).scrollIntoView() 
+                    document.getElementById('contact' + response).scrollIntoView() 
                     
                     // redirect to input
                     document.getElementById('input-form').style.display = 'block';
