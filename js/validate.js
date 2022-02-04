@@ -101,7 +101,7 @@ function contactForm(){
                     <form id="name-form" name="name-form" onsubmit="nameInserted(name.value); return false">
                         <label class="user" for="name">visitor@Line-By-Line: </label>
                         <label class="location" for="name">~ %</label>
-                        <input type="text" name="name" id="name"></input>
+                        <input type="text" name="name" id="name" autocomplete="off"></input>
                         <input type="submit" hidden />
                     </form>
                 </div>`
@@ -167,7 +167,7 @@ function nameInserted(nameInserted){
         <form id="email-form" name="email-form" onsubmit="emailInserted(email.value);return false">
             <label class="user" for="email">visitor@Line-By-Line: </label>
             <label class="location" for="email">~ %</label>
-            <input type="email" name="email" id="email"></input>
+            <input type="email" name="email" id="email" autocomplete="off"></input>
             <input type="submit" hidden />
         </form>
         </div>`;
@@ -232,7 +232,7 @@ function emailInserted(emailInserted){
         <form id="message-form" name="messageform" onsubmit="messageInserted(message.value);return false">
             <label class="user" for="message">visitor@Line-By-Line: </label>
             <label class="location" for="message">~ %</label>
-            <input type="text" name="message" id="message"></input>
+            <input type="text" name="message" id="message" autocomplete="off"></input>
             <input type="submit" hidden />
         </form>
         </div>`
@@ -296,7 +296,7 @@ function messageInserted(messageInserted){
             <form id="review-form" name="reviewform" onsubmit="reviewInserted(review.value);return false">
                 <label class="user" for="review">visitor@Line-By-Line: </label>
                 <label class="location" for="review">~ %</label>
-                <input type="text" name="review" id="review"></input>
+                <input type="text" name="review" id="review" autocomplete="off"></input>
                 <input type="submit" hidden />
             </form>
             </div>`

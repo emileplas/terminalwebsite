@@ -12,7 +12,7 @@
 <body>
     <header id="header-dark" class='header-dark-mode'>
     <!-- https://patorjk.com/software/taag/#p=display&f=Big&t=I%20am%20a%20developer font style: big-->
-        <pre>
+<pre>
  _    _      _ _                                                               
 | |  | |    | | |                                                              
 | |__| | ___| | | ___                                                          
@@ -27,11 +27,10 @@
         __/ |                                                                 
        | ___/  
 
-        </pre>
+</pre>
     </header>
-    <!-- <nav class="navbar-dark-mode" id="navbar-dark-mode">© Emile Plas - <span id="year"></span></nav> -->
     <header id="header-light" class="header-light-mode">
-        <pre>
+<pre>
 ██   ██ ███████ ██      ██       ██████                                                                               
 ██   ██ ██      ██      ██      ██    ██                                                                              
 ███████ █████   ██      ██      ██    ██                                                                              
@@ -45,7 +44,7 @@
 ██  ██  ██    ██        ██  ██ ██ ██   ██ ██  ██  ██ ██          ██      ██     ██      ██  ██  ██ ██ ██      ██      
 ██      ██    ██        ██   ████ ██   ██ ██      ██ ███████     ██ ███████     ███████ ██      ██ ██ ███████ ███████ 
 
-        </pre>
+</pre>
     </header>
     <nav class="navbar-dark-mode" id="navbar">© Emile Plas - <span id="year"></span></nav>
     <main>
@@ -109,7 +108,7 @@
             <!--TODO: make carret blink-->
             <label class="user" for="input">visitor@Line-By-Line: </label>
             <label class="location" for="input">~ %</label>
-            <input type="text" name="input" id="input"></input>
+            <input type="text" name="input" id="input" autocomplete="off"></input>
             <input type="submit" hidden />
         </form>
 
@@ -156,17 +155,7 @@
     
 
     function onScroll(e){
-        //if(navbarDark){
-            
             window.scrollY >= origOffsetY ? navbar.classList.add('stick-to-top') : navbar.classList.remove('stick-to-top');
-        //}
-
-
-        //if(navbarLight){
-            // var origOffsetYlight = navbarLight.offsetTop;
-            // window.scrollY >= origOffsetYlight ? navbarLight.classList.add('stick-to-top') : navbarLight.classList.remove('stick-to-top');
-        //}
-        
     }
 
 
