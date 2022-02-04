@@ -547,7 +547,8 @@ function validate(){
  
     
     let x = document.forms["inputForm"]["input"].value;
-    switch (x) {
+    let y = x.trim().toLowerCase()
+    switch (y) {
         case 'dark':
             darkMode();
             insertElement('darkmode');
