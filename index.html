@@ -121,8 +121,13 @@
 
 
 </body>
+<!--script for user input-->
 <script type="text/javascript" src="js/validate.js"></script>
+
+<!--script for switching between dark and light mode-->
 <script type="text/javascript" src="js/darkMode.js"></script>
+
+<!--script for allowing users to input information by pressing enter-->
 <script>
     var input = document.getElementById("input");
     input.addEventListener("keyup", function(event) {
@@ -135,44 +140,25 @@
     });
 
 </script>
+
 <!--script provides year for header-->
 <script type='text/javascript' src="js/date.js"></script>
 
-<script>
 
-// const messages = document.getElementsByTagName('main');
-
-
-
-// window.scrollTo(0,document.body.scrollHeight);
-
-// shouldScroll = messages.scrollTop + messages.clientHeight === messages.scrollHeight;
-
-
-// function scrollToBottom() {
-//     console.log("we are scrolling")
-//     messages.scrollTop = messages.scrollHeight;
-//   }
-
-// function shouldScroll(){
-//   if (!shouldScroll) {
-//     scrollToBottom();
-// }
-// }
-
-// shouldScroll()
-</script>
-
-<!-- <script type='text/javascript' scr='js/autoscroll.js'></script> -->
 
 <!--script provides introduction text-->
 <script type='text/javascript' src="js/introductionText.js"></script>
-<!-- <script>
-    function setFocusToTextBox(){
-        document.getElementById("input").focus();
+
+<!--script to make navbar stick-->
+<script>
+    var navbar = document.getElementsByTagName('nav')[0];
+    var origOffsetY = navbar.offsetTop;
+    
+    function onScroll(e){
+        window.scrollY >= origOffsetY ? navbar.classList.add('stick-to-top') : navbar.classList.remove('.stick-to-top');
     }
 
-</script> -->
-
+    document.addEventListener('scroll', onScroll);
+</script>
 
 </html>
