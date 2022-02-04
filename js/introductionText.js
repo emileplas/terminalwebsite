@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded',function(event){
             document.getElementById("input-form").style.display = 'block'
             function setFocusToTextBox(){
                 document.getElementById("input").focus();
-                console.log("focus function called")
+                console.log("intro focus function called")
             }
             setFocusToTextBox()
         }

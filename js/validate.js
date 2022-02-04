@@ -92,23 +92,35 @@ function contactForm(){
     createNewContactDiv()
     .then(function(response){
         console.log("we also received the response here" + response)
-        return new Promise((resolve, reject) => { 
+        return new Promise((resolve, reject) => { //@TODO: clean up unnecessary promise function
             document.getElementById('contact' + response).innerHTML = 
                 `<p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span></p>
         
-                <div id="name">
+                <div id="name-form-div">
                     <p>Please provide your name:</p>
                     <form id="name-form" name="name-form" onsubmit="nameInserted(name.value); return false">
                         <label class="user" for="name">visitor@Line-By-Line: </label>
                         <label class="location" for="name">~ %</label>
-                        <input type="text" name="name" id="name" autofocus></input>
+                        <input type="text" name="name" id="name"></input>
                         <input type="submit" hidden />
                     </form>
                 </div>`
-                resolve(name = name.value);
+            
+            //to ensure that contact section is fully visible    
+            document.getElementById('contact' + response).scrollIntoView() 
+            
+            function setFocusToNameInput(){
+                console.log("setFocusToName called");
+                document.getElementById("name").focus();
+            }
+
+            setFocusToNameInput();
+            
+            
             
         })
     })
+    
 }
 //end of first contact function
 
@@ -150,17 +162,21 @@ function nameInserted(nameInserted){
         document.getElementById('contact' + response).innerHTML = 
 `        <p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span></p>
         <p>Name: ${name}</p>
-        <div id="email">
+        <div id="email-form-div">
         <p>Please provide your e-mail address:</p>
         <form id="email-form" name="email-form" onsubmit="emailInserted(email.value);return false">
             <label class="user" for="email">visitor@Line-By-Line: </label>
             <label class="location" for="email">~ %</label>
-            <input type="email" name="email" id="email" autofocus></input>
+            <input type="email" name="email" id="email"></input>
             <input type="submit" hidden />
         </form>
         </div>`;
+
+
+        //to ensure that contact section is fully visible
+        document.getElementById('contact' + response).scrollIntoView() 
         
-  
+        document.getElementById("email").focus();
 
     })
     
@@ -208,21 +224,25 @@ function emailInserted(emailInserted){
     defineLatestContactDiv()
     .then(function(response){
         document.getElementById('contact' + response).innerHTML = 
-        `<p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span></p>
+        `<p><span class="userform">administrator@Line-By-Line: </span><span class="location">Contact %</span></p>
         <p>Name: ${name}</p>
         <p>Email: ${email}</p>
-        <div id="message">
+        <div id="message-form-div">
         <p>Please provide your message:</p>
         <form id="message-form" name="messageform" onsubmit="messageInserted(message.value);return false">
             <label class="user" for="message">visitor@Line-By-Line: </label>
             <label class="location" for="message">~ %</label>
-            <input type="text" name="message" id="message" autofocus></input>
+            <input type="text" name="message" id="message"></input>
             <input type="submit" hidden />
         </form>
         </div>`
 
+        //to ensure that contact section is fully visible
+        document.getElementById('contact' + response).scrollIntoView() 
 
-        resolve(message)
+        document.getElementById("message").focus();
+
+        // resolve(message)
 
     })
     
@@ -271,18 +291,21 @@ function messageInserted(messageInserted){
             <p>Name: ${name}</p>
             <p>Email: ${email}</p>
             <p>Message: ${message}</p>
-            <div id="review">
+            <div id="review-form-div">
             <p>Please confirm the message to send. Type YES or NO:</p>
             <form id="review-form" name="reviewform" onsubmit="reviewInserted(review.value);return false">
                 <label class="user" for="review">visitor@Line-By-Line: </label>
                 <label class="location" for="review">~ %</label>
-                <input type="text" name="review" id="review" autofocus></input>
+                <input type="text" name="review" id="review"></input>
                 <input type="submit" hidden />
             </form>
             </div>`
     
     
-            
+            //to ensure that contact section is fully visible
+            document.getElementById('contact' + response).scrollIntoView() 
+
+            document.getElementById("review").focus();
             
         })
     
@@ -355,30 +378,61 @@ function reviewInserted(reviewAnswerInserted){
                     method: "post"
                 })
                 .then(function(response) {
-                    console.log('form submitted succesfully');
-                    console.log(response)
-                    document.getElementById('contact' + idNumber).innerHTML = 
-                    `<p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span><span class="message">Your message was send succesfully. I will contact you soon.</span></p>`;
-                    document.getElementById('input-form').style.display = 'block';
+                    console.log(response);
+                    if(response.ok === true){
+                        console.log('form submitted succesfully');
+                        console.log(response)
 
-                    /* When submit successfully completed, hide form */
-                    // form.style.display = "none";
+                        //insert success message
+                        document.getElementById('contact' + idNumber).innerHTML = 
+                        `<p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span><span class="message">Your message was send succesfully. I will contact you soon.</span></p>`;
+                        
+                        //make input form visible again and focus on input form
+                        document.getElementById('input-form').style.display = 'block';
+                        document.getElementById('input-form').focus()
+    
+                        //to ensure that contact section is fully visible
+                        document.getElementById('contact' + response).scrollIntoView() 
 
-                    /* Show success message */
-                    // const successMessage = document.getElementById('success-message');
-                    // successMessage.style.display = 'block';
-                    // document.getElementById('form-success-message').style.display = 'block';
+                    }else{
+                        var error = {status: response.status, statusText: response.statusText}
+
+                        throw error;
+                        
+                    }
+
+
                 })
                 .catch(function(error) {
-                    console.log('Error', error);
+
+                    console.log(JSON.stringify(error));
+                    // console.log(error.status)
+
+                    var errorCode = JSON.stringify(error.status);
+                    var errorMessage = error.statusText;
+                    
                     document.getElementById('contact' + idNumber).innerHTML = 
-                    `<p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span><span class="error">Something went wrong. Please try again later.</span></p>`;
+                    `<p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span><span class="contact-error"> Something went wrong while submitting the contact form. We received the following error:<br/><br/>${errorCode}: ${errorMessage} <br/><br/>Please try again later.</span></p>`;
+                    
+
+                    // to ensure that contact section is fully visible
+                    // document.getElementById('contact' + response).scrollIntoView() 
+                    
+                    // redirect to input
                     document.getElementById('input-form').style.display = 'block';
+                    document.getElementById('input-form').focus();
+
+
                 });
             }else if(reviewCleaned ===  'no'){
                 document.getElementById('contact' + idNumber).innerHTML = 
-                `<p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span><span class="message">You decided to not send the message. If you want to send a message later on, you can type contact in the command line to send a new message.</span></p>`;
+                `<p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span><span class="message"> You decided to not send the message. If you want to send a message later on, you can type contact in the command line to send a new message.</span></p>`;
+                
                 document.getElementById('input-form').style.display = 'block';
+                document.getElementById('input-form').focus()
+
+                //to ensure that contact section is fully visible
+                document.getElementById('contact' + response).scrollIntoView() 
             }
             else{
                 console.log("we were in the last section")
@@ -396,7 +450,9 @@ function reviewInserted(reviewAnswerInserted){
                     } else {
                         document.getElementById('contact' + idNumber).innerHTML = 
                         `<p><span class="user">administrator@Line-By-Line: </span><span class="location">Contact %</span><span class="contact-error"> This command is not recognized. Please type YES or NO to submit the form. To leave the form, without submitting the message, type NO. Redirecting to submit question in ${timeleft} seconds</span></p>`;
-
+                        
+                        //to ensure that contact section is fully visible
+                        document.getElementById('contact' + response).scrollIntoView() 
 
                         // document.getElementById("redirect-count-down").innerHTML = timeleft + " seconds";
                      }
