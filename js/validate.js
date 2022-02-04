@@ -482,6 +482,11 @@ function insertElement(elementName){
 })
 }
 
+//function to guarantee that latest inserted div is visible for user:
+function scrollToLatestDiv(){
+    document.getElementById(divArray[divArray.length -1]).scrollIntoView();
+}
+
 function validate(){
  
     
@@ -489,32 +494,39 @@ function validate(){
     switch (x) {
         case 'dark':
             darkMode();
-            insertElement('darkmode')
+            insertElement('darkmode');
             clearInput(); // in order to clear input field after command is submitted
+            scrollToLatestDiv();
             break;
 
         case 'light':
             darkMode();
             insertElement('lightmode')
-            clearInput(); // in order to clear input field after command is submitted
+            clearInput()// in order to clear input field after command is submitted
+            scrollToLatestDiv()
             break;
 
         case 'about':
             insertElement('about');
             clearInput(); // in order to clear input field after command is submitted
+            scrollToLatestDiv()
             break;
 
         case 'projects':
             insertElement('projects');
             clearInput(); // in order to clear input field after command is submitted
+            scrollToLatestDiv()
             break;
         case 'contact':
             contactForm();
+            clearInput(); // in order to clear input field after command is submitted
+            scrollToLatestDiv();
             break;
 
         default:
             insertElement('error');
             clearInput(); // in order to clear input field after command is submitted
+            scrollToLatestDiv()
             break;
     }
 }
