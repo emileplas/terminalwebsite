@@ -57,13 +57,13 @@ html,body{
 }
 
 body {
-   
     padding: 25px;
     background-color: black;
     color: #CCCCCC;
-    font-size: 25px;
+    font-size: 1.75vw;
     font-family: "Fira Mono", monospace;
 }
+
 
 
   
@@ -87,6 +87,21 @@ body {
   display: none;
 }
 
+/* adaptation for larger screens (big computer screens or tv screens */
+@media only screen and (min-width: 1201px) {
+  body{
+    font-size: 1.25vw; 
+  }
+}
+
+
+/* adaptation for mobile phones */
+@media only screen and (max-width: 768px) {
+body{
+  font-size: 3vw;
+}
+}
+
 /* ----------------HEADER ------------- */
 
 
@@ -106,6 +121,19 @@ pre{
   max-width: 100%;
   font-size: 1.25vw;
 }
+
+/* adaptation for larger screens (big computer screens or tv screens */
+@media only screen and (min-width: 1201px) {
+  pre{
+    font-size: 1.5vw !important; 
+  }
+
+  .header-light-mode pre{
+    max-width: 100%;
+    font-size: 1vw !important;
+  }
+}
+
 
 /* ----------------navbar ------------- */
 
