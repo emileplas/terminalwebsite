@@ -41,6 +41,7 @@ function darkMode() {
     function getYear(){
         var year = new Date().getFullYear();
         document.getElementById('year-light').innerHTML = `${year}`;
+        // test
         
     }
 
