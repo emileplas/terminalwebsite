@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="main.css">
+    <link id="cssLink" rel="stylesheet" href="./css/terminal.css">
 
-    <title>Document</title>
+    <title>Line By Line</title>
 </head>
 <body>
     <header id="header-dark" class='header-dark-mode'>
@@ -46,7 +46,11 @@
 
 </pre>
     </header>
-    <nav class="navbar-dark-mode" id="navbar">© Emile Plas - <span id="year"></span></nav>
+    <nav class="navbar-dark-mode" id="navbar">© Emile Plas - <span id="year"></span> 
+    <a onclick="changeCSS()" href="#">Switch to GUI</a>
+
+
+    </nav>
     <main>
         <!--where the typed intro messages will be inserted-->
         <div id="introMessage"></div>
@@ -161,6 +165,22 @@
 
 
     document.addEventListener('scroll', onScroll);
+</script>
+
+<script>
+    function changeCSS(){
+        
+        var cssLink = document.getElementById('cssLink');
+
+        if(cssLink.getAttribute('href') === './css/terminal.css'){
+            cssLink.setAttribute('href', './css/gui.css');
+        }
+        else{
+            cssLink.setAttribute('href', './css/terminal.css')
+        }
+
+        
+    }
 </script>
 
 </html>
