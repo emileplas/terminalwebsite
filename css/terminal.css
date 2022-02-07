@@ -29,7 +29,13 @@
 
 /* ----------------STYLE CHANGES NECCESSARY FOR CHANGING FROM TERMINAL TO GUI ------------- */
 
-.blob{
+
+
+#intro-gui{
+  display:none;
+}
+
+#gui-nav{
   display: none;
 }
 
