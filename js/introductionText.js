@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded',function(event){
 
+
     var introMessages = ["I am a full stack developer.", "You are currently on the command version of my website", `Please type one of the following commands to get to know me: **about *projects. **To contact me, insert contact in the command line.`, "another message"];
     var y=0;
 
@@ -102,6 +103,10 @@ document.addEventListener('DOMContentLoaded',function(event){
         }
     }
 
-    insertAllMessages(y)
+    // document.getElementById('cssLink')
+    // if(cssLink.getAttribute('href') === './css/terminal.css'){
+        insertAllMessages(y)
+    // }
+
    
 })

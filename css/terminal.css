@@ -27,6 +27,11 @@
   "brightYellow" : "#F9F1A5"
 }, */
 
+/* ----------------STYLE CHANGES NECCESSARY FOR CHANGING FROM TERMINAL TO GUI ------------- */
+
+.blob{
+  display: none;
+}
 
 /* ----------------GENERAL ------------- */
 
