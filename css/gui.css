@@ -53,9 +53,10 @@
 
 html,body{
  
-
+    font-family: 'Noto Sans', sans-serif;
     width: 100vw;
     height: 100vh;
+    
 }
   
 body{
@@ -96,24 +97,63 @@ p{
     white-space: pre-wrap;
 }
 
+#gui-nav{
+    height: 95%;
+    /* min-width:; 1vw */
+    float: left;
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);
+    text-align: start;
+    
+    
+    
+}
+
+#gui-nav a{
+    color: white;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
 
 /* ----------------HEADER ------------- */
+
+
 
 #intro-gui{
     background-image: url(../images/background.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
+    
 
 
 }
 
-#intro-gui h1{
-    font-family: 'Noto Sans', sans-serif;
+#intro-gui header{
+    margin-top: 50vh;
+    text-align: center;
     color: white;
-    font-size: 10rem;
-   text-transform: uppercase;
-   text-align: center;
-   margin-top: 5%;
+}
+
+#intro-gui h1{
+    font-size: 5rem;
+    text-transform: uppercase;
+    margin-bottom: 0%;
+
+}
+
+#intro-gui h2{
+    font-size: 1,5rem;
+    font-style: italic;
+    margin-top: 0%;
+    text-transform:capitalize;
+}
+
+@media only screen and (max-width:768px){
+    #intro-gui h1{
+        font-size: 3rem;
+    }
+    #intro-gui h2{
+        font-size: 1rem;
+    }
 }
