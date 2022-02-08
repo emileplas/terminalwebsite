@@ -175,7 +175,7 @@
 <!--script provides introduction text-->
 <script type='text/javascript' src="js/introductionText.js"></script>
 
-<!--script to make navbar stick-->
+<!--script to make terminal navbar stick-->
 <script type='text/javascript'>
     var navbar = document.getElementById('navbar');
     var origOffsetY = navbar.offsetTop;
@@ -206,20 +206,15 @@
     }
 </script>
 
-<!-- <script>
+<!--script for side scrolling in GUI-->
+<script>
     const scrollContainer = document.querySelector("body");
 
     scrollContainer.addEventListener("wheel", (evt) => {
-        evt.preventDefault();
+        // evt.preventDefault();
         scrollContainer.scrollLeft += evt.deltaY;
     });
-
-    scrollContainer.addEventListener('swiped', function(e) {
-        console.log(e.target); // the element that was swiped
-        console.log(e.detail.dir); // swiped direction
-    });
-
-</script> -->
+</script>
 
 <!-- <script>
     var myNav = document.getElementById('gui-nav');
