@@ -66,8 +66,8 @@
 
             </header>
             <section class="header-directions">
-                <a>Get to know me <img class="header-directions-arrow" src="./icons/outline_east_black_24dp.png"></a><br>
-                <a>Colaborate with me <img class="header-directions-arrow" src="./icons/outline_east_black_24dp.png"></a>
+                <a>Get to know me <img class="header-directions-arrow" src="./icons/arrow-right.png"></a><br>
+                <a>Colaborate with me <img class="header-directions-arrow" src="./icons/arrow-right.png"></a>
             </section>
             
         </div>
@@ -75,7 +75,7 @@
         <div id="introMessage"></div>
 
         <!--about-->
-        <div id="about1 content" class="about">
+        <div id="about1" class="about content">
             <p><span class="user">visitor@Line-By-Line: </span><span class="location">About %</span></p>
             <p class="printed-section">About me:</p>
             <p class="printed-section">I am a <em>full stack developer</em> based in Belgium and Brazil. From a young age I have always been interested in creating with computers. I started building websites and forums at the age of 14 using HTML and CSS. After high school I took a small non-technological detour. I graduated from law school and was active as a real estate and environemntal lawyer for 4 years working with various clients.</p>
@@ -86,7 +86,7 @@
         <!--end of about-->
         
         <!--project section-->
-        <div id="projects1 content" class="projects">
+        <div id="projects1" class="projects content">
             <p><span class="user">visitor@Line-By-Line: </span><span class="location">Projects % </span></p>
             <p class="printed-section">Recent projects:</p>
             <p>[1] My Legal Database - Ongoing</p>
@@ -205,5 +205,35 @@
         
     }
 </script>
+
+<!-- <script>
+    const scrollContainer = document.querySelector("body");
+
+    scrollContainer.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+    });
+
+    scrollContainer.addEventListener('swiped', function(e) {
+        console.log(e.target); // the element that was swiped
+        console.log(e.detail.dir); // swiped direction
+    });
+
+</script> -->
+
+<!-- <script>
+    var myNav = document.getElementById('gui-nav');
+    // window.onscroll = function () { 
+    //     "use strict";
+        if (document.isInViewport(document.getElementById('about1'))) {
+            myNav.classList.add("nav-colored");
+            myNav.classList.remove("nav-transparent");
+        } 
+        else {
+            myNav.classList.add("nav-transparent");
+            myNav.classList.remove("nav-colored");
+        }
+// };
+</script> -->
 
 </html>
