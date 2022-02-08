@@ -55,7 +55,8 @@ html,body{
  
     font-family: 'Noto Sans', sans-serif;
     width: 100vw;
-    height: 100vh;
+    max-height: 100vh;
+    overflow-y: hidden;
     
 }
   
@@ -97,6 +98,8 @@ p{
     white-space: pre-wrap;
 }
 
+/* ----------------NAVBAR ------------- */
+
 #gui-nav{
     height: 95%;
     /* min-width:; 1vw */
@@ -113,6 +116,12 @@ p{
     color: white;
     margin-top: 2%;
     margin-bottom: 2%;
+}
+
+@media only screen and (max-width:768px){
+    #gui-nav{
+        height: 85%;
+    }
 }
 
 /* ----------------HEADER ------------- */
@@ -154,10 +163,8 @@ p{
     margin-right: 2%;
     color: white;
     font-style: italic;
-    
-    position: absolute;
-    bottom: 2%;
-    right: 0%;
+    margin-top: 25vh;
+
 }
 
 .header-directions a{
@@ -166,11 +173,24 @@ p{
     font-size: 1rem;
 }
 
+.header-directions-arrow{
+    filter: invert(1);
+    top: 6px;
+    bottom: 0px;
+    position: relative;
+}
+
+
 @media only screen and (max-width:768px){
     #intro-gui h1{
         font-size: 3rem;
     }
     #intro-gui h2{
         font-size: 1rem;
+    }
+
+    .header-directions{
+        margin-top: 45%;
+        
     }
 }
