@@ -279,15 +279,48 @@ p{
     text-align: justify;
 }
 
+#about-description{
+    height: 100%;
+    padding-bottom: 30%;
+}
+
+
 @media only screen and (max-width:768px){
+    .about{
+        /* margin-top: 0%; */
+        margin-left: 10%;
+        margin-right: 10%;
+    }
     .about-column-left{
         display: block;
         width: 100%;
+        height: 40%;
+        
     }
     .about-column-right{
         display: block;
         width: 100%;
+        height: 60%;
+        margin-bottom: 5%;
     }
+    .about-header{
+       margin-top: 5vh;
+        font-size: 6vw !important;
+    }
+    .about p{
+        font-size: 3vw;
+    }
+    .about-image{
+        margin-top: 5%;
+        /* height: 70%; */
+        height: auto;
+        max-height: 80%;
+        max-width: 60%;
+        width: auto;
+        
+    }
+
+    
 }
 
 
