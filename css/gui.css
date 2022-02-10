@@ -238,17 +238,20 @@ p{
 
 .about-image{
     height: auto;
-    width: 60%;
+    max-width: 60%;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 15%;
+    max-height: 70%;
     
 }
 
 .about figcaption{
     text-align: center;
     font-style: italic;
+    font-size: 16px;
+    color:#5661e6
 }
 
 .about-column-left{
@@ -284,6 +287,11 @@ p{
     padding-bottom: 30%;
 }
 
+.about em{
+    font-style: normal;
+    color:#5661e6;
+}
+
 
 @media only screen and (max-width:768px){
     .about{
@@ -308,7 +316,7 @@ p{
         font-size: 6vw !important;
     }
     .about p{
-        font-size: 3vw;
+        font-size: 2.5vw;
     }
     .about-image{
         margin-top: 5%;
@@ -319,8 +327,9 @@ p{
         width: auto;
         
     }
-
-    
+    .about figcaption{
+        font-size: 2vw;
+    }
 }
 
 
