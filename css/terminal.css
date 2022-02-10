@@ -39,6 +39,18 @@
   display: none;
 }
 
+.about-column-left{
+  display: none !important;
+}
+
+.about-image{
+  display: none !important;
+}
+
+
+
+
+
 /* ----------------GENERAL ------------- */
 
 em{
