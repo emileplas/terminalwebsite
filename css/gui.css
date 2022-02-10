@@ -238,13 +238,16 @@ p{
 .about-image{
     height: auto;
     width: 60%;
-    
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .about-column-left{
     display: inline-block;
     width: 50%;
-    align-items: center;
+    
+    
 }
 
 .about-column-right{
