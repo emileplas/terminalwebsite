@@ -190,6 +190,7 @@
     document.addEventListener('scroll', onScroll);
 </script>
 
+<!--script enabling to switch between terminal view and gui interface-->
 <script>
     function changeCSS(){
         
@@ -214,21 +215,118 @@
         // evt.preventDefault();
         scrollContainer.scrollLeft += evt.deltaY;
     });
+
+    // scrollContainer.addEventListener('swiped', function(){
+    //     console.log("swiped");
+    // })
 </script>
 
+
+<!-- TODO: include swipping motions -->
 <!-- <script>
-    var myNav = document.getElementById('gui-nav');
-    // window.onscroll = function () { 
-    //     "use strict";
-        if (document.isInViewport(document.getElementById('about1'))) {
-            myNav.classList.add("nav-colored");
-            myNav.classList.remove("nav-transparent");
-        } 
-        else {
-            myNav.classList.add("nav-transparent");
-            myNav.classList.remove("nav-colored");
-        }
-// };
+    var touchstartX = 0;
+var touchstartY = 0;
+var touchendX = 0;
+var touchendY = 0;
+
+var gesuredZone = document.getElementById('gesuredZone');
+
+gesuredZone.addEventListener('touchstart', function(event) {
+    touchstartX = event.screenX;
+    touchstartY = event.screenY;
+}, false);
+
+gesuredZone.addEventListener('touchend', function(event) {
+    touchendX = event.screenX;
+    touchendY = event.screenY;
+    handleGesure();
+}, false); 
+
+function handleGesure() {
+    var swiped = 'swiped: ';
+    if (touchendX < touchstartX) {
+        console.log('swiped left');
+    }
+    if (touchendX > touchstartX) {
+        alert(swiped + 'right!');
+    }
+    if (touchendY < touchstartY) {
+        alert(swiped + 'down!');
+    }
+    if (touchendY > touchstartY) {
+        alert(swiped + 'left!');
+    }
+    if (touchendY == touchstartY) {
+        alert('tap!');
+    }
+}
+
 </script> -->
+
+<!-- <script>
+    const mobileScrollContainer = document.querySelector("body");
+
+    mobileScrollContainer.addEventListener('swiped', function(e) {
+        console.log(e.target); // the element that was swiped
+        console.log(e.detail.dir); // swiped direction
+    });
+
+</script> -->
+
+<!-- JS function that checks if divs are visible in horizontal scrolling GUI-->
+<script>
+    const inViewObserver = new IntersectionObserver(entries => { entries.forEach(entry => {
+        if (entry.isIntersecting) {
+        // do stuff when in view
+        // entry.target.classList.add('in-view')
+        // document.body.dataset.log = 'Element in view - well done 😃'
+            console.log('about is visible')
+        } else {
+        // do stuff when not in view
+        // entry.target.classList.remove('in-view')
+        // document.body.dataset.log = 'Element not in view - try to find it 🔍'
+            console.log('about is not visible')
+        }
+        })
+    }, { threshold: .5 })
+
+    const elm = document.getElementById('about1')
+    inViewObserver.observe(elm)
+
+
+
+
+    //     function isElementInViewport (el) {
+
+    //         // Special bonus for those using jQuery
+    //         if (typeof jQuery === "function" && el instanceof jQuery) {
+    //             el = el[0];
+    //         }
+
+    //         var rect = el.getBoundingClientRect();
+
+    //         return (
+    //             rect.top >= 0 &&
+    //             rect.left >= 0 &&
+    //             rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
+    //             rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
+    //         );
+    //     }
+
+
+    //      var myNav = document.getElementById('gui-nav');
+    // // window.onscroll = function () { 
+    // //     "use strict";
+    //     if (isElementInViewport(document.getElementById('about1'))) {
+    //         console.log('about 1 is visible')
+    //         myNav.classList.add("nav-colored");
+    //         myNav.classList.remove("nav-transparent");
+    //     } 
+    //     else {
+    //         myNav.classList.add("nav-transparent");
+    //         myNav.classList.remove("nav-colored");
+    //     }
+// };
+</script>
 
 </html>
