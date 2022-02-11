@@ -51,11 +51,103 @@ function setMessage(messageInput){
     return message = messageInput;
 }
 
+function insertContactElement(){
+    return new Promise((resolve, reject) => { 
+    var latestDiv = divArray[divArray.length -1]
+
+    if(divArray.length === 0){
+        console.log("there are currently no divs present on the webpage")
+        //    function inserts first contact div after intro messages
+        const firstContactSection = document.createElement('div');
+        firstContactSection.setAttribute("id", "contact1");
+
+
+        const introMessages = document.getElementById('introMessage');
+        
+        firstContactSection.appendAfter(introMessages)
+        
+        
+        
+        //divarray is updated
+        divArray.push('contact1')
+        console.log("These are the divs present at the page " + divArray)
+        resolve(true)
+
+
+    }
+    else if(divArray.length > 0 && divArray.includes('contact1')){
+        
+        console.log("there are divs present on the webpage and we already have a contact div")
+        // function takes care of multiple requests for same div (e.g. about - about - about - projects - about), each time sorting after the latest div.
+        
+        var allElements = []
+        
+        for(i=0; i<divArray.length; i++){
+            if(divArray[i].includes('contact'))
+            allElements.push(divArray[i])
+        }
+
+        var lastContactDiv = allElements[allElements.length -1];
+
+        //first a new id number is defined
+        var existingId = document.getElementById(lastContactDiv).id;
+    
+        var existingIDNumber = parseInt(existingId.match(/\d/g));
+
+        var newIdNumber = existingIDNumber+1;
+        console.log(newIdNumber)
+
+        //second: a new contact div is created after the lastDiv with the new ID number
+        const newContactSection = document.createElement('div');
+        newContactSection.setAttribute("id", `contact${newIdNumber}`);
+
+        newContactSection.appendAfter(document.getElementById(latestDiv))
+
+        
+
+        //third: divarray is updated
+        divArray.push(newContactSection.getAttribute('id'))
+
+        console.log("These are the divs present at the page " + divArray)
+
+        resolve(true)
+        
+    }else{
+        //function insertes contact div if there are already divs present on the page but not a contact div
+        // console.log("there are already divs but no contact div")
+
+        //    function inserts first element
+        const firstContactSection = document.createElement('div');
+        firstContactSection.setAttribute("id", "contact1");
+
+
+        // const introMessages = document.getElementById('introMessage');
+        
+        firstContactSection.appendAfter(document.getElementById(latestDiv))
+        
+        
+        
+        //divarray is updated
+        divArray.push('contact1')
+        console.log("These are the divs present at the page " + divArray)
+        resolve(true)
+
+
+    
+
+
+     
+        
+    }
+})
+}
+
 //first function for contact form responsible for creating a contact form and allowing the visitor to insert the their name
 function contactForm(){
     function createNewContactDiv(){
         return new Promise((resolve, reject) => {
-            insertElement('contact')
+            insertContactElement()
+
             .then(function(response){
                 document.getElementById('input-form').style.display = 'none';
                 return true;
@@ -477,6 +569,7 @@ function insertElement(elementName){
     var latestDiv = divArray[divArray.length -1]
 
     if(divArray.length === 0){
+        console.log("we were in the first function")
         //    function inserts first element
         document.getElementById(elementName + 1).style.display = 'block';
         
@@ -489,7 +582,10 @@ function insertElement(elementName){
         // clearInput()
     }
     else if(divArray.length > 0 && divArray.includes(elementName + 1)){
+        
+        console.log("we were in the second function")
         // function takes care of multiple requests for same div (e.g. about - about - about - projects - about), each time sorting after the latest div.
+        
         var allElements = []
         
         for(i=0; i<divArray.length; i++){
@@ -521,6 +617,9 @@ function insertElement(elementName){
         resolve(true)
         
     }else{
+        console.log("we were in the last function")
+
+
         // function inserts object for first time if there is already an object printed
         document.getElementById(elementName+1).appendAfter(document.getElementById(latestDiv));
         document.getElementById(elementName+1).style.display = 'block';
