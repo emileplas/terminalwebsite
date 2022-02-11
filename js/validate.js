@@ -563,6 +563,14 @@ function reviewInserted(reviewAnswerInserted){
 //array that holds an overview of all the divs that are present on the page
 divArray = [];
 
+function removeElementFromDivArray(element){
+    for(i=0;i<divArray.length;i++){
+        if(divArray[i] === element){
+            divArray.splice(i,1)
+        }
+    }
+}
+
 //function that takes care of displaying and/or inserting new divs
 function insertElement(elementName){
     return new Promise((resolve,reject) => { 
@@ -642,6 +650,100 @@ function scrollToLatestDiv(){
     document.getElementById(divArray[divArray.length -1]).scrollIntoView();
 }
 
+function switchWebsiteVersion(){
+    var cssLink = document.getElementById('cssLink');
+
+
+    function clearHTMLOfRepeatedDivs(){
+        return new Promise((resolve, reject) => { 
+        if(cssLink.getAttribute('href') === './css/terminal.css'){
+            //find all divs that do not have a number 1 in their id name. These are the additional divs that were created by the user using the terminal and are not 'by default' present on the page
+            var divsToBeRemoved = divArray.filter(element => {
+               
+                return !element.includes("1")
+            })
+                
+            
+            console.log("This are the divs to be removed " + divsToBeRemoved);
+            
+            //remove additional created divs from webpage;
+            const removedDivs = divsToBeRemoved.forEach(div => {
+                //remove elements from document
+                document.getElementById(div).remove()
+                //for consistency all elements are removed from divArray;
+                removeElementFromDivArray(div)
+            });
+            resolve(removedDivs)
+        }
+       
+        else{
+            resolve()
+        }
+        })
+
+    }
+
+    //all elements that were inserted/made visible using the terminal hava a display 'block' setting which conflicts with the inline-block setting of the gui
+    function removeStyleSettingsFromDivs(){
+        return new Promise((resolve,reject)=> { 
+            if(cssLink.getAttribute('href') === './css/terminal.css'){
+                console.log("we activated the remove style attribute")
+                const changeDivs =  divArray.forEach(div => {
+                    var element = document.getElementById(div)
+
+                    //not all elements have a style attribute therefor a check whether the style attribute is present
+                    if(element.hasAttribute('style')){
+                        try{ 
+                        element.removeAttribute('style')
+                        }catch(error){
+                            console.log(error)
+                        }
+                    }else{
+                        return
+                    }
+                })
+                
+                
+                
+                resolve(changeDivs)
+            }
+            else{
+                resolve()
+            }
+    })
+        
+    }
+    
+    //function changes the CSS file, depending on the options
+    function changeWebsiteDisplay(){
+        
+        // location.reload()
+
+        
+        if(cssLink.getAttribute('href') === './css/terminal.css'){
+            
+            cssLink.setAttribute('href', './css/gui.css');
+            return false;
+        }
+        else{
+            
+            cssLink.setAttribute('href', './css/terminal.css');
+            
+            return false;
+        }
+
+        
+    }
+
+    clearHTMLOfRepeatedDivs()
+    .then(function(response){
+        removeStyleSettingsFromDivs();
+        
+    }).then(function(response){
+        changeWebsiteDisplay()
+    })
+}
+
 function validate(){
  
     
@@ -678,7 +780,6 @@ function validate(){
             clearInput(); // in order to clear input field after command is submitted
             scrollToLatestDiv();
             break;
-
         default:
             insertElement('error');
             clearInput(); // in order to clear input field after command is submitted

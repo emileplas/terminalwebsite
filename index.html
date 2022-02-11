@@ -47,7 +47,7 @@
 </pre>
 </header>
     <nav class="navbar-dark-mode" id="navbar">© Emile Plas - <span id="year"></span> 
-    <a onclick="changeCSS()" href="#">Switch to GUI</a>
+    <a onclick="switchWebsiteVersion()" href="#">Switch to GUI</a>
 
 
     </nav>
@@ -199,19 +199,26 @@
 
 <!--script enabling to switch between terminal view and gui interface-->
 <script>
-    function changeCSS(){
+    // function changeWebsiteDisplay(){
         
-        var cssLink = document.getElementById('cssLink');
+    //     // location.reload()
 
-        if(cssLink.getAttribute('href') === './css/terminal.css'){
-            cssLink.setAttribute('href', './css/gui.css');
-        }
-        else{
-            cssLink.setAttribute('href', './css/terminal.css')
-        }
+    //     var cssLink = document.getElementById('cssLink');
+
+    //     if(cssLink.getAttribute('href') === './css/terminal.css'){
+            
+    //         cssLink.setAttribute('href', './css/gui.css');
+    //         return false;
+    //     }
+    //     else{
+            
+    //         cssLink.setAttribute('href', './css/terminal.css');
+            
+    //         return false;
+    //     }
 
         
-    }
+    // }
 </script>
 
 <!--script for side scrolling in GUI-->
