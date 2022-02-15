@@ -53,8 +53,9 @@
     display: none;
 }
 
-
-
+.header-light-mode{
+    display: none;
+}
 
 /* ----------------GENERAL ------------- */
 
@@ -167,6 +168,8 @@ p{
     background-repeat: no-repeat;
     background-size: cover;
     
+    
+    
 
 
 }
@@ -235,49 +238,85 @@ p{
     margin-left: 5%;
     margin-right: 5%;
     display: inline-block;
+    width: 200vw;
+    
+}
+
+
+
+
+
+.about-column-left{
+    display: inline-block;
+    width: 50vw !important;
+    height: 100%;
+    vertical-align: top;
+    
+    margin-right: 2vw;
+    
+    
+}
+
+.about-column-center{
+    display: inline-block !important;
+    width: 100vw !important;
+    height: 100%;
+    vertical-align: top;
   
     
 }
 
-.about-image{
-    height: auto;
-    max-width: 60%;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 15%;
-    max-height: 70%;
-    
-}
-
-.about figcaption{
-    text-align: center;
-    font-style: italic;
-    font-size: 16px;
-    color:#5661e6
-}
-
-.about-column-left{
-    display: inline-block;
-    width: 50%;
-    height: 100%;
-    vertical-align: top;
-    
-}
 
 .about-column-right{
     display: inline-block;
-    width: 50%;
+    width: 50vw !important;
     height: 100%;
     vertical-align: top;
+    margin-left: 2vw;
     
+}
+
+.about-image{
+    width: 95vw;
+    height: auto;
+    max-height: 50%;
+    margin-top: 15%;
 }
 
 .about-header{
     font-size: 4rem;
     color:#2834c5;
     margin-top: 15%;
+    
+}
 
+.techstack-header{
+    font-size: 4rem;
+    color:#2834c5;
+    margin-top: 15%;
+    text-align: right !important;
+}
+
+.about table{
+    table-layout: fixed;
+    width: 45vw;
+    border: 1px solid;
+    text-align: center;
+    
+}
+
+.about th,td{
+    border: 1px solid;
+    font-size: 1rem;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.techstack-icon{
+    vertical-align: bottom;
+    width: 100%;
+    height: 100%;
+    max-width: 50px;
 }
 
 .about p{
@@ -298,41 +337,23 @@ p{
 
 @media only screen and (max-width:768px){
     .about{
-        /* margin-top: 0%; */
+        
         margin-left: 10%;
         margin-right: 10%;
     }
-    .about-column-left{
-        display: block;
-        width: 100%;
-        height: 40%;
-        
-    }
-    .about-column-right{
-        display: block;
-        width: 100%;
-        height: 60%;
-        margin-bottom: 5%;
-    }
+
     .about-header{
-       margin-top: 5vh;
+        margin-top: 5vh;
+        font-size: 6vw !important;
+    }
+    .techstack-header{
+        margin-top: 5vh;
         font-size: 6vw !important;
     }
     .about p{
         font-size: 2.5vw;
     }
-    .about-image{
-        margin-top: 5%;
-        /* height: 70%; */
-        height: auto;
-        max-height: 80%;
-        max-width: 60%;
-        width: auto;
-        
-    }
-    .about figcaption{
-        font-size: 2vw;
-    }
+
 }
 
 

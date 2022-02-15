@@ -39,12 +39,23 @@
   display: none;
 }
 
-.about-column-left{
+.about-column-center{
   display: none !important;
 }
 
 .about-image{
   display: none !important;
+}
+
+.techstack-icon{
+  display: none;
+}
+
+.about table{
+  width: 50%;
+  margin-bottom: 4%;
+  border: dashed;
+  word-wrap: break-word;
 }
 
 
