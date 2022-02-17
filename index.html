@@ -78,7 +78,7 @@
         <div id="about1" class="about content">
             <p><span class="user">visitor@Line-By-Line: </span><span class="location">About %</span></p>
 
-        <section class="about-column-left">
+        <section class="about-column-left" id="about-column-left">
             <p class="printed-section about-header">about me:</p>
             <section id="about-description">
                 <p class="printed-section">I am a <em>full stack developer</em> based in Belgium and Brazil. From a young age I have always been interested in creating with computers. I started building websites and forums at the age of 14 using HTML and CSS. After high school I took a small non-technological detour. I graduated from law school and was active as a real estate and environemntal lawyer for 4 years working with various clients.</p>
@@ -87,12 +87,12 @@
             </section>
 
         </section>
-        <section class="about-column-center">
+        <section class="about-column-center" id="about-column-center">
             <img class="about-image" src="./images/abouttestimage.jpg">
             
         </section>
 
-        <section class="about-column-right">
+        <section class="about-column-right" id="about-column-right">
             <p class="printed-section techstack-header">tech stack:</p>
             <section id="about-description">
                 <table>
@@ -142,16 +142,32 @@
         <!--project section-->
         <div id="projects1" class="projects content">
             <p><span class="user">visitor@Line-By-Line: </span><span class="location">Projects % </span></p>
-            <p class="printed-section">Recent projects:</p>
-            <p>[1] My Legal Database - Ongoing</p>
-            <p>With the My Legal Database I want to create a publicly accessible database, that bundels case law from different public databases, in one centralized, user friendly database.</p>
-            <p>Technologies used: React-Redux, HTML, CSS, Elasticsearch, Node.js.</p>
-            <p>[2] Website pH Controle de Qualidade</p>
-            <p>pH Controle de Qualidade is a Brazilian based consultancy firm. The goal of this project was to develop a minimalistic yet visually attractive website.</p>
-            <p>Technologies used: Javascript, HTML, CSS, Bootstrap.</p>
-            <p>[3] Appartamento Salvador</p>
-            <p>This website was created in order to promote an appartement for sale in Salvador. The website uses a video header for the desktop version.</p>
-            <p>Techologies used: HTML, CSS.</p>
+            <p class="printed-section project-header">Recent projects:</p>
+            <section class="tile active-tile" id="tile-one">
+                <p class="tile-title"><span class="project-number">[1]</span><span >My Legal Database - Ongoing</span></p>
+                <section class="project-description">
+                    <p>With the My Legal Database I want to create a publicly accessible database, that bundels case law from different public databases, in one centralized, user friendly database.</p>
+                    <p>Technologies used: React-Redux, HTML, CSS, Elasticsearch, Node.js.</p>
+                </section>
+            </section>
+            <section class="tile" id="tile-two">
+                <p>[2] Website pH Controle de Qualidade</p>
+                 <p>pH Controle de Qualidade is a Brazilian based consultancy firm. The goal of this project was to develop a minimalistic yet visually attractive website.</p>
+                <p>Technologies used: Javascript, HTML, CSS, Bootstrap.</p>
+            </section>
+            <section class="tile" id="tile-tree">
+                <p>[3] Appartamento Salvador</p>
+                <p>This website was created in order to promote an appartement for sale in Salvador. The website uses a video header for the desktop version.</p>
+                <p>Techologies used: HTML, CSS.</p>
+            </section>
+            <section class="tile" id="tile-four">
+                <p>[3] Appartamento Salvador</p>
+                <p>This website was created in order to promote an appartement for sale in Salvador. The website uses a video header for the desktop version.</p>
+                <p>Techologies used: HTML, CSS.</p>
+            </section>
+            <button id="arrow-up" class="arrow-up"></button>
+            <button id="arrow-down" class="arrow-down"></button>
+
 
         </div>
         <!--end of project section-->

@@ -361,4 +361,75 @@ p{
 
 .projects{
     background-color: #5661e6;
+    width: 100vw;
+    
+    
 }
+
+.tile{
+    display: none;
+    width: 50vw;
+  
+    
+}
+
+.active-tile{
+    display: inline-block;
+    margin: 0 auto;
+    display: block !important;
+    margin-top: 10%;
+    margin-left: 27%;
+    height: 60vh;
+    border: 1px solid black;
+    /* background-image: url(../images/tiles/datacenter.jpg); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    background-color:#2834c5
+
+
+    
+
+
+
+}
+
+.project-number{
+    display: none;
+}
+
+.tile-title{
+   width: 100%;
+  
+   color: white !important;
+  
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+
+    background: rgba(255, 255, 255, 0.2);
+    /* border-radius: 16px; */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+    
+}
+
+
+
+.project-description{
+    padding-left: 5%;
+    padding-right: 2.5%;
+    color: white;
+    text-align: justify;
+}
+
+

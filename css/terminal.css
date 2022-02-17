@@ -58,6 +58,16 @@
   word-wrap: break-word;
 }
 
+.arrow-up{
+  display: none;
+}
+
+.arrow-down{
+  display: none;
+}
+
+<button id="arrow-up" class="arrow-up"></button>
+<button id="arrow-down" class="arrow-down"></button>
 
 
 
@@ -262,6 +272,10 @@ input:focus {outline:none!important;}
 .darkmode{
   display: none;
 }
+
+
+
+
 
 /* ----------------CONTACT ------------- */
 .contact{

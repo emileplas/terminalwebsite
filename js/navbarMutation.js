@@ -24,6 +24,7 @@
 
     const about = document.getElementById('about1');
     var myNav = document.getElementById('gui-nav');
+
   
 
     document.body.addEventListener('scroll', function(){
