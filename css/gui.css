@@ -419,6 +419,7 @@ p{
     margin-block-end: 0;
     padding-top: 5%;
     padding-bottom: 5%;
+   
 
 
     
@@ -430,21 +431,30 @@ p{
     /* padding-left: 5%;
     padding-right: 2.5%; */
     color: white;
-    height: 100%;
+    height: 80%;
   
     /* display: inline-block; */
     /* text-align: justify; */
     /* margin-block-start: 0;
     margin-block-end: 0; */
+    overflow: hidden;
+    position: relative;
+    width: 100%;
  
 }
 
 .text-section{
-    width: 40vw;
+    width: 80%;
     display: inline-block;
     height: 100% !important;
     padding-left: 5%;
     padding-right: 2,5%;
+   
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
     
 }
 
@@ -493,6 +503,15 @@ p{
     margin-block-start: 0;
     margin-block-end: 0;
     
+    width: 20%;
+    display: inline-block;
+    height: 100% !important;
+    padding-left: 5%;
+    padding-right: 2,5%;
+   
 
+    position: absolute;
+    right: 0;
+    top: 0;
   }
   
