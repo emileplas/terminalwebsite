@@ -369,7 +369,15 @@ p{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100%;
     
+}
+
+.project-header{
+    margin-left: 5%;
+    font-size: 4rem;
+    color:white;
+    margin-top: 9%;
 }
 
 
@@ -385,9 +393,9 @@ p{
     display: inline-block !important;
     margin: 0 auto;
     width: 70vw;
-    margin-top: 10%;
     margin-left: 15%;
-    height: 60vh;
+    margin-bottom: 50%;
+    height: 50vh;
     border: 1px solid black;
     background-position: center;
     background-repeat: no-repeat;
@@ -467,7 +475,7 @@ p{
 
 .image-section img{
     width: 100%;
-    padding-top: 50%;
+    padding-top: 25%;
 }
 
 .arrow-section{
@@ -525,13 +533,31 @@ p{
 
 .arrow-up{
     background-image: url('../icons/arrow_up.png');
-    margin-top: 25% !important;
+    margin-top: 20% !important;
 
 }
   
 .arrow-down{
     background-image: url('../icons/arrow_down.png');
-    margin-top: 70%;
+    margin-top: 45%;
+}
 
+.project-links{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.tile-icon{
+    padding-left: 2%;
+    
+    height: 20px;
+    filter: invert(1);
+    top: 6px;
+    bottom: 0px;
+    position: relative;
+}
+
+.first-project-link{
+    padding-left: 0 !important;
 }
   
