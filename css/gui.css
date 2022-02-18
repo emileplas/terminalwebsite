@@ -167,8 +167,10 @@ p{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
-    
+    z-index: -1;
+    /* position: fixed; */
+    /* display: inline-block; */
+    position: relative;
     
 
 
@@ -239,7 +241,8 @@ p{
     margin-right: 5%;
     display: inline-block;
     width: 200vw;
-    
+   
+  
 }
 
 
@@ -362,9 +365,14 @@ p{
 .projects{
     background-color: #5661e6;
     width: 100vw;
-    
+    /* background-image: url(../images/background.webp); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     
 }
+
+
 
 .tile{
     display: none;
@@ -376,52 +384,38 @@ p{
 .active-tile{
     display: inline-block !important;
     margin: 0 auto;
-    width: 50vw;
+    width: 70vw;
     margin-top: 10%;
-    margin-left: 27%;
+    margin-left: 15%;
     height: 60vh;
     border: 1px solid black;
-  
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     justify-content: center;
     background-color:#2834c5
-
-
-    
-
-
-
 }
+
 
 .project-number{
     display: none;
 }
 
 .tile-title{
-  
-   color: white !important;
-  
+    color: white !important;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 
 
     background: rgba(255, 255, 255, 0.2);
- 
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-  
     margin-block-start: 0;
     margin-block-end: 0;
     padding-top: 5%;
     padding-bottom: 5%;
-   
-
-
-    
 }
 
 
@@ -439,19 +433,62 @@ p{
 }
 
 .text-section{
-    width: 80%;
-    display: inline-block;
+    width: 60%;
+    display: inline-block !important;
     height: 100% !important;
-    padding-left: 5%;
+    /* padding-left: 5%;
     padding-right: 2,5%;
-    padding-top: 5%;
+    padding-top: 5%; */
 
     position: absolute;
     left: 0;
     top: 0;
 
+  
+
     
 }
+
+.text-section p{
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: justify;
+    width: 80%;
+
+}
+
+.image-section{
+    display: inline-block !important;
+    height: 100%;
+    width: 20%;
+    position: absolute;
+    left: 60%;
+}
+
+.image-section img{
+    width: 100%;
+    padding-top: 50%;
+}
+
+.arrow-section{
+    display: inline-block !important;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    
+    width: 20%;
+    height: 100% !important;
+    padding-left: 5%;
+    padding-right: 2,5%;
+   
+
+    position: absolute;
+    left: 80%;
+    /* top: 27%; */
+ 
+    
+    
+  }
+  
 
 
 .arrow{
@@ -488,7 +525,7 @@ p{
 
 .arrow-up{
     background-image: url('../icons/arrow_up.png');
-  
+    margin-top: 25% !important;
 
 }
   
@@ -497,24 +534,4 @@ p{
     margin-top: 70%;
 
 }
-  
-  .arrow-section{
-    display: inline-block !important;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    
-    width: 20%;
-    display: inline-block;
-    height: 100% !important;
-    padding-left: 5%;
-    padding-right: 2,5%;
-   
-
-    position: absolute;
-    right: 0;
-    top: 27%;
- 
-    
-    
-  }
   
