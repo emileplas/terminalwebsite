@@ -71,9 +71,12 @@ for (var i = 0; i < arrowUpArray.length; i++) {
                     
             var previousActiveTile = tiles[indexOfActiveTile];
             var nextActiveTile = tiles[indexOfNextActiveTile];
-        
+            
+            
             previousActiveTile.classList.remove('active-tile');
+            
             nextActiveTile.classList.add('active-tile');
+          
             
         }
     
